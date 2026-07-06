@@ -1,15 +1,17 @@
-import { MessageCircle } from 'lucide-react';
+import { BOT_WHATSAPP_DISPLAY, BOT_WHATSAPP_URL } from '../../config/whatsapp';
+import { WhatsAppIcon } from '../icons/WhatsAppIcon';
 
 export function FloatingWhatsAppButton() {
   return (
     <a
-      href="https://wa.me/919810887227"
+      href={BOT_WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500 text-white shadow-lg shadow-emerald-500/30 transition hover:scale-110 hover:bg-emerald-400"
-      aria-label="Chat on WhatsApp"
+      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/40 transition hover:scale-110 hover:bg-[#20bd5a]"
+      aria-label={`Chat on WhatsApp — ${BOT_WHATSAPP_DISPLAY}`}
+      title={`WhatsApp bot: ${BOT_WHATSAPP_DISPLAY}`}
     >
-      <MessageCircle size={26} />
+      <WhatsAppIcon size={30} />
     </a>
   );
 }

@@ -1,5 +1,6 @@
 import { SectionReveal } from '../ui/section-reveal';
 import { Button } from '../ui/button';
+import { BOT_WHATSAPP_URL } from '../../config/whatsapp';
 
 interface FinalCTASectionProps {
   onRegister: () => void;
@@ -27,7 +28,7 @@ export function FinalCTASection({ onRegister, onDemo }: FinalCTASectionProps) {
                 <Button
                   size="lg"
                   variant="outline"
-                  onClick={() => window.open('https://wa.me/919810887227', '_blank')}
+                  onClick={() => window.open(BOT_WHATSAPP_URL, '_blank')}
                 >
                   Talk on WhatsApp
                 </Button>
