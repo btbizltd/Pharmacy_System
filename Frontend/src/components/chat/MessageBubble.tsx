@@ -31,7 +31,7 @@ export function MessageBubble({ content, senderType, time, messageType = 'text' 
 
     if ((messageType === 'image' || messageType === 'document') && !isResolvableMediaPath(content)) {
       return (
-        <p className="text-sm italic text-slate-500">
+        <p className="text-sm italic text-zinc-400">
           {content || 'Media unavailable — file may not have been saved.'}
         </p>
       );
@@ -45,9 +45,9 @@ export function MessageBubble({ content, senderType, time, messageType = 'text' 
       <div
         className={`max-w-[75%] rounded-2xl px-4 py-2.5 shadow-sm ${
           senderType === 'patient'
-            ? 'rounded-bl-md bg-white text-slate-800 ring-1 ring-slate-200'
+            ? 'rounded-bl-md bg-zinc-800 text-zinc-100 ring-1 ring-zinc-700'
             : senderType === 'bot'
-              ? 'rounded-br-md bg-slate-100 text-slate-700 ring-1 ring-slate-200'
+              ? 'rounded-br-md bg-violet-500/15 text-violet-100 ring-1 ring-violet-500/20'
               : 'rounded-br-md bg-brand-600 text-white'
         }`}
       >
@@ -56,7 +56,7 @@ export function MessageBubble({ content, senderType, time, messageType = 'text' 
         </p>
         {renderBody()}
         {time ? (
-          <p className={`mt-1 text-[10px] ${isOutgoing ? 'text-white/70' : 'text-slate-400'}`}>
+          <p className={`mt-1 text-[10px] ${isOutgoing ? 'text-white/70' : 'text-zinc-400'}`}>
             {time}
           </p>
         ) : null}

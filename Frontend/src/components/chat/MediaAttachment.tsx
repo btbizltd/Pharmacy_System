@@ -18,7 +18,7 @@ export function MediaAttachment({ content, alt = 'Attachment' }: MediaAttachment
           href={mediaUrl}
           target="_blank"
           rel="noreferrer"
-          className="block overflow-hidden rounded-lg ring-1 ring-slate-200 transition hover:ring-brand-300"
+          className="block overflow-hidden rounded-lg ring-1 ring-zinc-700 transition hover:ring-brand-300"
         >
           <img
             src={mediaUrl}
@@ -31,10 +31,10 @@ export function MediaAttachment({ content, alt = 'Attachment' }: MediaAttachment
           href={mediaUrl}
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 transition hover:border-brand-300 hover:bg-brand-50/50"
+          className="flex items-center gap-3 rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2.5 transition hover:border-brand-400 hover:bg-brand-500/10"
         >
           <FileText size={22} className="shrink-0 text-brand-600" />
-          <span className="truncate text-sm font-medium text-slate-700">{fileName}</span>
+          <span className="truncate text-sm font-medium text-zinc-200">{fileName}</span>
         </a>
       )}
 
@@ -51,7 +51,7 @@ export function MediaAttachment({ content, alt = 'Attachment' }: MediaAttachment
         <a
           href={mediaUrl}
           download={fileName}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-zinc-700 bg-zinc-900 px-2.5 py-1.5 text-xs font-medium text-zinc-300 hover:bg-zinc-800"
         >
           <Download size={13} />
           Download

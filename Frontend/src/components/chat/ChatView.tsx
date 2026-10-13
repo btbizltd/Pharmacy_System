@@ -168,7 +168,7 @@ export function ChatView({ pharmacyId, conversation }: ChatViewProps) {
   );
 
   return (
-    <div className="flex h-full min-h-0 flex-col overflow-hidden bg-[#e5ddd5]">
+    <div className="flex h-full min-h-0 flex-col overflow-hidden bg-zinc-950">
       <header className="flex shrink-0 items-center gap-3 border-b border-violet-900/50 bg-violet-800 px-5 py-4 text-white shadow-sm">
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
           <UserRound size={20} className="text-white" />
@@ -190,13 +190,13 @@ export function ChatView({ pharmacyId, conversation }: ChatViewProps) {
         {loading ? (
           <div className="space-y-3">
             <div className="flex justify-start">
-              <Skeleton className="h-14 w-[58%] rounded-2xl rounded-tl-sm bg-white/70" />
+              <Skeleton className="h-14 w-[58%] rounded-2xl rounded-tl-sm bg-zinc-800" />
             </div>
             <div className="flex justify-end">
               <Skeleton className="h-10 w-[45%] rounded-2xl rounded-tr-sm bg-violet-200/60" />
             </div>
             <div className="flex justify-start">
-              <Skeleton className="h-20 w-[65%] rounded-2xl rounded-tl-sm bg-white/70" />
+              <Skeleton className="h-20 w-[65%] rounded-2xl rounded-tl-sm bg-zinc-800" />
             </div>
             <div className="flex justify-end">
               <Skeleton className="h-12 w-[50%] rounded-2xl rounded-tr-sm bg-violet-200/60" />
@@ -204,7 +204,7 @@ export function ChatView({ pharmacyId, conversation }: ChatViewProps) {
           </div>
         ) : messages.length === 0 ? (
           <div className="flex h-full items-center justify-center">
-            <p className="rounded-xl bg-white/80 px-4 py-2 text-sm text-slate-500 shadow-sm">
+            <p className="rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-2 text-sm text-zinc-400 shadow-sm">
               No messages yet. Use &quot;Simulate patient&quot; to test the chat.
             </p>
           </div>
@@ -225,14 +225,14 @@ export function ChatView({ pharmacyId, conversation }: ChatViewProps) {
       </div>
 
       {error ? (
-        <div className="mx-4 mb-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">
+        <div className="mx-4 mb-2 rounded-lg border border-red-500/20 bg-red-500/10 px-3 py-2 text-sm text-red-300">
           {error}
         </div>
       ) : null}
 
-      <div className="shrink-0 border-t border-slate-200 bg-white px-4 py-3">
+      <div className="shrink-0 border-t border-zinc-800 bg-zinc-900 px-4 py-3">
         {!pharmacy?.whatsappIntegration?.connected ? (
-          <p className="mb-2 text-xs text-amber-700">
+          <p className="mb-2 text-xs text-amber-300">
             WhatsApp delivery pending — messages save to database only until integration is
             complete.
           </p>
@@ -242,7 +242,7 @@ export function ChatView({ pharmacyId, conversation }: ChatViewProps) {
             type="button"
             onClick={() => setSimulateOpen(true)}
             disabled={sending || sendingPayment}
-            className="rounded-xl border border-slate-200 px-3 py-2 text-xs font-medium text-slate-600 hover:bg-slate-50 disabled:opacity-50"
+            className="rounded-xl border border-zinc-700 px-3 py-2 text-xs font-medium text-zinc-300 hover:bg-zinc-800 disabled:opacity-50"
           >
             Simulate patient
           </button>
@@ -255,7 +255,7 @@ export function ChatView({ pharmacyId, conversation }: ChatViewProps) {
                 ? 'Send payment link or QR from Settings'
                 : 'Add payment link or QR in Settings first'
             }
-            className="flex items-center gap-1 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs font-medium text-amber-800 hover:bg-amber-100 disabled:opacity-50"
+            className="flex items-center gap-1 rounded-xl border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs font-medium text-amber-200 hover:bg-amber-500/20 disabled:opacity-50"
           >
             <IndianRupee size={14} />
             Payment
@@ -270,7 +270,7 @@ export function ChatView({ pharmacyId, conversation }: ChatViewProps) {
               }
             }}
             placeholder="Type a reply as pharmacist..."
-            className="flex-1 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-100"
+            className="flex-1 rounded-xl border border-zinc-700 bg-zinc-950 px-4 py-2.5 text-sm text-zinc-100 placeholder:text-zinc-500 outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20"
           />
           <button
             type="button"

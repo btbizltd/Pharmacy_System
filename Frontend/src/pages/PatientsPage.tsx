@@ -99,14 +99,14 @@ export function PatientsPage() {
                 value={form.name}
                 onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))}
                 placeholder="Patient name"
-                className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none focus:border-brand-500"
+                className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-2.5 text-sm text-zinc-100 outline-none placeholder:text-zinc-500 focus:border-brand-500"
                 required
               />
               <input
                 value={form.mobile}
                 onChange={(e) => setForm((prev) => ({ ...prev, mobile: e.target.value }))}
                 placeholder="Mobile (e.g. 919876543210)"
-                className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none focus:border-brand-500"
+                className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-2.5 text-sm text-zinc-100 outline-none placeholder:text-zinc-500 focus:border-brand-500"
                 required
               />
               <input
@@ -114,7 +114,7 @@ export function PatientsPage() {
                 onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))}
                 placeholder="Email (optional)"
                 type="email"
-                className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none focus:border-brand-500"
+                className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-2.5 text-sm text-zinc-100 outline-none placeholder:text-zinc-500 focus:border-brand-500"
               />
             </div>
 
@@ -128,29 +128,29 @@ export function PatientsPage() {
             </button>
           </form>
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-            <h2 className="mb-4 font-semibold text-slate-900">Patient list</h2>
+          <div className="rounded-2xl border border-zinc-800 bg-zinc-900/50 p-5 shadow-sm">
+            <h2 className="mb-4 font-semibold text-zinc-100">Patient list</h2>
 
             {loading ? (
               <SkeletonPatientList />
             ) : patients.length === 0 ? (
-              <p className="text-sm text-slate-500">No patients yet.</p>
+              <p className="text-sm text-zinc-400">No patients yet.</p>
             ) : (
               <div className="space-y-2">
                 {patients.map((patient) => (
                   <div
                     key={patient._id}
-                    className="flex items-center justify-between rounded-xl border border-slate-100 px-3 py-3"
+                    className="flex items-center justify-between rounded-xl border border-zinc-800 px-3 py-3"
                   >
                     <div>
-                      <p className="font-medium text-slate-900">{patient.name}</p>
-                      <p className="text-sm text-slate-500">{patient.mobile}</p>
+                      <p className="font-medium text-zinc-100">{patient.name}</p>
+                      <p className="text-sm text-zinc-400">{patient.mobile}</p>
                     </div>
                     <button
                       type="button"
                       onClick={() => void handleStartChat(patient._id)}
                       disabled={submitting}
-                      className="flex items-center gap-1 rounded-lg bg-brand-50 px-3 py-1.5 text-xs font-semibold text-brand-700 hover:bg-brand-100 disabled:opacity-50"
+                      className="flex items-center gap-1 rounded-lg bg-brand-500/15 px-3 py-1.5 text-xs font-semibold text-brand-300 hover:bg-brand-500/25 disabled:opacity-50"
                     >
                       <MessageSquarePlus size={14} />
                       Chat
@@ -163,7 +163,7 @@ export function PatientsPage() {
         </div>
 
         {error ? (
-          <div className="mt-4 rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">{error}</div>
+          <div className="mt-4 rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm text-red-300">{error}</div>
         ) : null}
       </div>
     </div>

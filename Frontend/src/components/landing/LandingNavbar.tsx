@@ -1,19 +1,15 @@
 import { Link } from 'react-router-dom';
-import { MessageCircle, Moon, Sun } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { Button } from '../ui/button';
 
 interface LandingNavbarProps {
   onLogin: () => void;
   onRegister: () => void;
-  darkMode: boolean;
-  onToggleDark: () => void;
 }
 
 export function LandingNavbar({
   onLogin,
   onRegister,
-  darkMode,
-  onToggleDark,
 }: LandingNavbarProps) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-zinc-950/70 backdrop-blur-xl">
@@ -44,9 +40,6 @@ export function LandingNavbar({
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon" onClick={onToggleDark} aria-label="Toggle theme">
-            {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-          </Button>
           <Button variant="ghost" size="sm" onClick={onLogin} className="hidden sm:inline-flex">
             Login
           </Button>

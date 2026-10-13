@@ -109,7 +109,7 @@ export function SkeletonConversationList({ rows = 7 }: { rows?: number }) {
 
 export function SkeletonChatPanel() {
   return (
-    <div className="flex h-full min-h-0 flex-col overflow-hidden bg-[#e5ddd5]">
+    <div className="flex h-full min-h-0 flex-col overflow-hidden bg-zinc-950">
       <div className="flex shrink-0 items-center gap-3 border-b border-violet-900/50 bg-violet-800/80 px-5 py-4">
         <Skeleton className="h-10 w-10 rounded-full bg-violet-900/40" />
         <div className="space-y-2">
@@ -119,22 +119,22 @@ export function SkeletonChatPanel() {
       </div>
       <div className="min-h-0 flex-1 space-y-3 overflow-hidden px-4 py-4">
         <div className="flex justify-start">
-          <Skeleton className="h-14 w-[58%] rounded-2xl rounded-tl-sm bg-white/70" />
+          <Skeleton className="h-14 w-[58%] rounded-2xl rounded-tl-sm bg-zinc-800" />
         </div>
         <div className="flex justify-end">
           <Skeleton className="h-10 w-[45%] rounded-2xl rounded-tr-sm bg-violet-200/60" />
         </div>
         <div className="flex justify-start">
-          <Skeleton className="h-20 w-[65%] rounded-2xl rounded-tl-sm bg-white/70" />
+          <Skeleton className="h-20 w-[65%] rounded-2xl rounded-tl-sm bg-zinc-800" />
         </div>
         <div className="flex justify-end">
           <Skeleton className="h-12 w-[50%] rounded-2xl rounded-tr-sm bg-violet-200/60" />
         </div>
         <div className="flex justify-start">
-          <Skeleton className="h-10 w-[40%] rounded-2xl rounded-tl-sm bg-white/70" />
+          <Skeleton className="h-10 w-[40%] rounded-2xl rounded-tl-sm bg-zinc-800" />
         </div>
       </div>
-      <div className="shrink-0 border-t border-slate-200 bg-white px-4 py-3">
+      <div className="shrink-0 border-t border-zinc-800 bg-zinc-900 px-4 py-3">
         <Skeleton className="h-10 w-full rounded-xl" />
       </div>
     </div>
@@ -215,13 +215,13 @@ export function SkeletonPatientList({ rows = 5 }: { rows?: number }) {
       {Array.from({ length: rows }).map((_, i) => (
         <div
           key={i}
-          className="flex items-center justify-between rounded-xl border border-slate-100 px-3 py-3"
+          className="flex items-center justify-between rounded-xl border border-zinc-800 px-3 py-3"
         >
           <div className="space-y-2">
-            <Skeleton className="h-4 w-32 bg-slate-200" />
-            <Skeleton className="h-3 w-24 bg-slate-100" />
+            <Skeleton className="h-4 w-32 bg-zinc-800" />
+            <Skeleton className="h-3 w-24 bg-zinc-900" />
           </div>
-          <Skeleton className="h-8 w-20 rounded-lg bg-slate-100" />
+          <Skeleton className="h-8 w-20 rounded-lg bg-zinc-900" />
         </div>
       ))}
     </div>

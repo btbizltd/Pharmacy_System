@@ -22,7 +22,6 @@ export function LandingPage() {
   const [loginOpen, setLoginOpen] = useState(false);
   const [registerOpen, setRegisterOpen] = useState(false);
   const [loginEmail, setLoginEmail] = useState('');
-  const [darkMode, setDarkMode] = useState(true);
 
   const openLogin = (email = '') => {
     setLoginEmail(email);
@@ -35,21 +34,11 @@ export function LandingPage() {
     });
   };
 
-  const toggleDark = () => {
-    setDarkMode((current) => {
-      const next = !current;
-      document.documentElement.classList.toggle('light', !next);
-      return next;
-    });
-  };
-
   return (
     <div className="mesh-bg min-h-screen">
       <LandingNavbar
         onLogin={() => openLogin()}
         onRegister={() => setRegisterOpen(true)}
-        darkMode={darkMode}
-        onToggleDark={toggleDark}
       />
 
       <main>

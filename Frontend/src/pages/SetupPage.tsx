@@ -17,7 +17,7 @@ import { usePharmacy } from '../context/PharmacyContext';
 type SetupMode = 'connect' | 'create';
 
 const inputClass =
-  'w-full rounded-xl border border-slate-200 bg-slate-50/50 px-3.5 py-2.5 text-sm outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100';
+  'w-full rounded-xl border border-zinc-700 bg-zinc-900 px-3.5 py-2.5 text-sm text-zinc-100 outline-none transition placeholder:text-zinc-500 focus:border-brand-500 focus:bg-zinc-900 focus:ring-2 focus:ring-brand-500/20';
 
 export function SetupPage() {
   const navigate = useNavigate();
@@ -119,35 +119,35 @@ export function SetupPage() {
       </aside>
 
       {/* Right — form panel */}
-      <main className="flex min-w-0 flex-1 flex-col items-center justify-center overflow-hidden px-6 py-8 sm:px-10">
+      <main className="flex min-w-0 flex-1 flex-col items-center justify-center overflow-hidden bg-zinc-950 px-6 py-8 text-zinc-100 sm:px-10">
         <div className="w-full max-w-md">
           {/* Mobile-only header */}
           <div className="mb-6 text-center lg:hidden">
-            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-100 text-brand-700">
+              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-500/15 text-brand-300">
               <MessageCircle size={24} />
             </div>
-            <h2 className="text-xl font-bold text-slate-900">BTbiz Pharmacy</h2>
+            <h2 className="text-xl font-bold text-white">BTbiz Pharmacy</h2>
           </div>
 
           <div className="mb-6">
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+            <h2 className="text-2xl font-bold tracking-tight text-white">
               {mode === 'create' ? 'Register your pharmacy' : 'Welcome back'}
             </h2>
-            <p className="mt-1.5 text-sm text-slate-500">
+            <p className="mt-1.5 text-sm text-zinc-400">
               {mode === 'create'
                 ? 'A few details and your dashboard is ready.'
                 : 'Connect with your saved Pharmacy ID.'}
             </p>
           </div>
 
-          <div className="mb-5 grid grid-cols-2 gap-1.5 rounded-2xl bg-slate-100 p-1">
+          <div className="mb-5 grid grid-cols-2 gap-1.5 rounded-2xl border border-zinc-800 bg-zinc-900 p-1">
             <button
               type="button"
               onClick={() => setMode('create')}
               className={`flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-sm font-medium transition ${
                 mode === 'create'
-                  ? 'bg-white text-brand-700 shadow-sm'
-                  : 'text-slate-500 hover:text-slate-700'
+                  ? 'bg-brand-500/15 text-brand-300 shadow-sm'
+                  : 'text-zinc-400 hover:text-zinc-100'
               }`}
             >
               <Building2 size={15} />
@@ -158,8 +158,8 @@ export function SetupPage() {
               onClick={() => setMode('connect')}
               className={`flex items-center justify-center gap-1.5 rounded-xl py-2.5 text-sm font-medium transition ${
                 mode === 'connect'
-                  ? 'bg-white text-brand-700 shadow-sm'
-                  : 'text-slate-500 hover:text-slate-700'
+                  ? 'bg-brand-500/15 text-brand-300 shadow-sm'
+                  : 'text-zinc-400 hover:text-zinc-100'
               }`}
             >
               <KeyRound size={15} />
@@ -168,7 +168,7 @@ export function SetupPage() {
           </div>
 
           {error ? (
-            <div className="mb-4 rounded-xl bg-red-50 px-3.5 py-2.5 text-sm text-red-700">
+            <div className="mb-4 rounded-xl border border-red-500/20 bg-red-500/10 px-3.5 py-2.5 text-sm text-red-300">
               {error}
             </div>
           ) : null}
@@ -176,7 +176,7 @@ export function SetupPage() {
           {mode === 'connect' ? (
             <form onSubmit={handleConnect} className="space-y-5">
               <div>
-                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-slate-500">
+                <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-zinc-400">
                   Pharmacy ID
                 </label>
                 <input
@@ -200,7 +200,7 @@ export function SetupPage() {
             <form onSubmit={handleCreate} className="space-y-4">
               <div className="grid grid-cols-2 gap-3">
                 <div className="col-span-2">
-                  <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-zinc-400">
                     Pharmacy name
                   </label>
                   <input
@@ -212,7 +212,7 @@ export function SetupPage() {
                   />
                 </div>
                 <div>
-                  <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-zinc-400">
                     Email
                   </label>
                   <input
@@ -225,7 +225,7 @@ export function SetupPage() {
                   />
                 </div>
                 <div>
-                  <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  <label className="mb-1.5 block text-xs font-semibold uppercase tracking-wide text-zinc-400">
                     Mobile
                   </label>
                   <input
@@ -241,7 +241,7 @@ export function SetupPage() {
               <button
                 type="button"
                 onClick={() => setShowAdvanced((v) => !v)}
-                className="flex w-full items-center justify-between rounded-xl border border-dashed border-slate-200 px-3.5 py-2.5 text-sm text-slate-500 transition hover:border-brand-300 hover:text-brand-700"
+                className="flex w-full items-center justify-between rounded-xl border border-dashed border-zinc-700 px-3.5 py-2.5 text-sm text-zinc-400 transition hover:border-brand-400 hover:text-brand-300"
               >
                 <span>WhatsApp & greeting (optional)</span>
                 <ChevronDown
@@ -251,7 +251,7 @@ export function SetupPage() {
               </button>
 
               {showAdvanced ? (
-                <div className="space-y-3 rounded-xl border border-slate-100 bg-slate-50/80 p-3.5">
+                <div className="space-y-3 rounded-xl border border-zinc-800 bg-zinc-900/70 p-3.5">
                   <input
                     value={form.whatsappPhoneNumberId}
                     onChange={(e) => updateField('whatsappPhoneNumberId', e.target.value)}
@@ -284,7 +284,7 @@ export function SetupPage() {
             </form>
           )}
 
-          <p className="mt-6 text-center text-xs text-slate-400">
+          <p className="mt-6 text-center text-xs text-zinc-500">
             WhatsApp can be connected later — you can still use the dashboard now.
           </p>
         </div>
